@@ -6,18 +6,18 @@ The description of the project...
 + Link to Heroku App: http://bevalkyri.herokuapp.com/
 + Ruby version: 2.0.0
 + System dependencies
-  * Backaid: Underscore.js and Backbone.js <tt>rails g backaid</tt>
+  * Backaid: Underscore.js and Backbone.js `rails g backaid`
 + Configuration
-<tt>bundle install</tt>
+`bundle install`
 + Database creation
 Add a database.yml file...
-<tt>rake db:create</tt>
+`rake db:create`
 + Database initialization
-<tt>rake db:migrate</tt>
+`rake db:migrate`  
 + How to run the test suite
-Use <tt>rake db:migrate RAILS_ENV=test</tt> to migrate your test environment
-Use <tt>rspec</tt> to run the rspec test suite
-Use <tt>rake jasmine</tt> to run the jasmine test suite
+  * Use `rake db:migrate RAILS_ENV=test` to migrate your test environment
+  * Use `rspec` to run the rspec test suite
+  * Use `rake jasmine` to run the jasmine test suite
 
 
 ## Data Model
@@ -26,7 +26,6 @@ Use <tt>rake jasmine</tt> to run the jasmine test suite
   * email
   * pasword_digest
   * *can have many Players*
-
 + Player
   * user_id fk *belongs to a User*
   * name
@@ -38,24 +37,20 @@ Use <tt>rake jasmine</tt> to run the jasmine test suite
   * *can have many Games*
   * *can have many Buildings*
   * *can have zero to many Tiles*
-
 + Game (Join between Player and Board)
   * player_id fk *belongs to a Player*
   * board_id fk *belongs to a Board*
-
 + Board
   * geography?
   * *can have many Buildings*
   * *can have many Games*
   * *can have many Buildings*
   * *can have many Tiles*
-
 + Tiles
   * player_id fk *belongs to a Player*
   * board_id fk *belongs to a Board*
   * location
   * taken?
-
 + Buildings (STI)
   * player_id fk *belongs to a Player*
   * board_id fk *belongs to a Board*
