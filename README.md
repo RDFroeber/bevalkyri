@@ -1,27 +1,20 @@
-# Bevalkyri
+#Bevalkyri
 
 The description of the project...
 
-* Link to Github Repo: https://github.com/RDFroeber/bevalkyri
-
-* Link to Heroku App: http://bevalkyri.herokuapp.com/
-
-* Ruby version: 2.0.0
-
-* System dependencies
++ Link to Github Repo: https://github.com/RDFroeber/bevalkyri
++ Link to Heroku App: http://bevalkyri.herokuapp.com/
++ Ruby version: 2.0.0
++ System dependencies
   * Backaid: Underscore.js and Backbone.js <tt>rails g backaid</tt>
-
-* Configuration
++ Configuration
 <tt>bundle install</tt>
-
-* Database creation
++ Database creation
 Add a database.yml file...
 <tt>rake db:create</tt>
-
-* Database initialization
++ Database initialization
 <tt>rake db:migrate</tt>
-
-* How to run the test suite
++ How to run the test suite
 Use <tt>rake db:migrate RAILS_ENV=test</tt> to migrate your test environment
 Use <tt>rspec</tt> to run the rspec test suite
 Use <tt>rake jasmine</tt> to run the jasmine test suite
