@@ -8,20 +8,20 @@ var BoardView = Backbone.View.extend({
   },
 
   createBoard: function(){
-    // var allTiles = new TilesCollection();
-    var x_one = "00";
-    var x_two = "01";
+    var allTiles = new TilesCollection();
+    var xOne = "00";
+    var xTwo = "01";
 
     for(var x = 0; x < 12; x++){
-      var y_one = "00";
-      var y_two = "01";
+      var yOne = "00";
+      var yTwo = "01";
 
       for(var y = 0; y < 12; y++) {
-        var tile = new Tile({dataX: x_one + "-" + x_two, dataY: y_one + "-" +  y_two});
+        var tile = new Tile({dataX: xOne + "-" + xTwo, dataY: yOne + "-" +  yTwo});
         var tileView = new TileView({model: tile});
         
-        y_one = this.increment_points(y_one);
-        y_two = this.increment_points(y_two);
+        yOne = this.incrementPoints(yOne);
+        yTwo = this.incrementPoints(yTwo);
 
         var data_x = tileView.model.get("dataX");
         var data_y = tileView.model.get("dataY");
@@ -30,17 +30,18 @@ var BoardView = Backbone.View.extend({
         var distanceFromLeft = data_x.split("-")[0];
 
         tileView.$el.css({top: 32 * distanceFromTop, left: 32 * distanceFromLeft});
+        allTiles.push({tile});
         this.$el.append(tileView.el);
       };
 
-    x_one = this.increment_points(x_one);
-    x_two = this.increment_points(x_two);
+    xOne = this.incrementPoints(xOne);
+    xTwo = this.incrementPoints(xTwo);
 
     }
   },
 
-  increment_points: function(variable){
-    var integer = parseInt(variable)
+  incrementPoints: function(point){
+    var integer = parseInt(point)
     integer++
     var num = integer.toString();
 
@@ -67,25 +68,27 @@ var BoardView = Backbone.View.extend({
   },
 
   addHouses: function(){
-    var x_one = "01";
+    var allHouses = new HousesCollection();
+    var xOne = "01";
 
     for(var x = 0; x < 11; x++){
-      var y_one = "00";
+      var yOne = "00";
 
       for(var y = 0; y < 11; y++) {
-        var house = new House({dataX: x_one, dataY: y_one});
+        var house = new House({dataX: xOne, dataY: yOne});
         var houseView = new HouseView({model: house});
 
-        y_one = this.increment_points(y_one);
+        yOne = this.incrementPoints(yOne);
 
         var data_x = houseView.model.get("dataX");
         var data_y = houseView.model.get("dataY");
 
         houseView.$el.css({top: (32 * (11 - data_y)) - 5, left: (32 * data_x) - 5});
+        allHouses.push({house});
         this.$el.append(houseView.el);
       };
 
-    x_one = this.increment_points(x_one);
+    xOne = this.incrementPoints(xOne);
 
     }
   }

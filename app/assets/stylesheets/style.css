@@ -11,7 +11,7 @@ h1, h2 {
 }
 
 .castle {
-  background-color: blue;
+  background-color: #f06;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -19,7 +19,7 @@ h1, h2 {
 }
 
 .house {
-  background-color: blue;
+  background-color: #f06;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -45,5 +45,5 @@ h1, h2 {
 }
 
 .territory {
-  background-color: rgba(100,100,100,0.20);
+  background-color: rgba(255,0,102,0.20);
 }
