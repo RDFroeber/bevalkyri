@@ -1,1 +1,2 @@
-var Tile = Backbone.Model.extend({});
+var Tile = Backbone.Model.extend({
+});

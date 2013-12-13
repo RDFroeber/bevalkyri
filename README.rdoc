@@ -1,28 +1,90 @@
-== README
+# Bevalkyri
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The description of the project...
 
-Things you may want to cover:
+* Link to Github Repo: https://github.com/RDFroeber/bevalkyri
 
-* Ruby version
+* Link to Heroku App: http://bevalkyri.herokuapp.com/
+
+* Ruby version: 2.0.0
 
 * System dependencies
+  * Backaid: Underscore.js and Backbone.js <tt>rails g backaid</tt>
 
 * Configuration
+<tt>bundle install</tt>
 
 * Database creation
+Add a database.yml file...
+<tt>rake db:create</tt>
 
 * Database initialization
+<tt>rake db:migrate</tt>
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use <tt>rake db:migrate RAILS_ENV=test</tt> to migrate your test environment
+Use <tt>rspec</tt> to run the rspec test suite
+Use <tt>rake jasmine</tt> to run the jasmine test suite
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Data Model
++ Users
+  * name
+  * email
+  * pasword_digest
+  * *can have many Players*
+
++ Player
+  * user_id fk *belongs to a User*
+  * name
+  * kingdom
+  * crest
+  * color_one
+  * color_two
+  * manifesto
+  * *can have many Games*
+  * *can have many Buildings*
+  * *can have zero to many Tiles*
+
++ Game (Join between Player and Board)
+  * player_id fk *belongs to a Player*
+  * board_id fk *belongs to a Board*
+
++ Board
+  * geography?
+  * *can have many Buildings*
+  * *can have many Games*
+  * *can have many Buildings*
+  * *can have many Tiles*
+
++ Tiles
+  * player_id fk *belongs to a Player*
+  * board_id fk *belongs to a Board*
+  * location
+  * taken?
+
++ Buildings (STI)
+  * player_id fk *belongs to a Player*
+  * board_id fk *belongs to a Board*
+  * type ('Castle', 'House', 'Base')
+  * location
+  * range ('Base')
+
+## User Stories
+**As a User**
+
+1. I want to be able to create an account so that my personal information is saved and secure.
+
+2. I want to be able to login to my account so that I can access my personal information.
+
+3. I want to be able to create a new player so that I can play a game.
+
+4. I want to be able to use an existing player profile to play a game so that I can immediately start playing.
+
+5. I want to be able to create a new game so that I can start playing from the beginning.
+
+6. I want to be able to save my current game so that I do not loose my progress and can come back to it at a later time.
+
+7. I want to be able to resume a game that I have already started so that I can pick up where I left off.
+
+8. I want to...

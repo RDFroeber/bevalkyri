@@ -1,4 +1,4 @@
-var tilesCollectionView = Backbone.View.extnd({
-  collection: tiles,
+var allTilesView = Backbone.View.extend({
+  tagName: "div"
 });
 

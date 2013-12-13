@@ -21,4 +21,4 @@
 //= require_tree ./backbone/views
 //= require_tree ./backbone/routers
 
-new BoardView();
+new BoardView({allTiles: new TilesCollection(), allHouses: new HousesCollection()});
