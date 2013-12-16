@@ -5,9 +5,9 @@ var BoardView = Backbone.View.extend({
     this.createBoard();
     this.placeCastle();
     this.addHouses();
-    this.allTiles = options.allTiles;
-    console.log(this.allTiles);
-    this.allHouses = options.allHouses;
+    // this.allTiles = options.allTiles;
+    // console.log(this.allTiles);
+    // this.allHouses = options.allHouses;
   },
 
   createBoard: function(){
