@@ -8,7 +8,6 @@ Bv.Views.House = Backbone.View.extend({
   },
 
   initialize: function(){
-    this.$el.attr({"data-x": this.model.get("dataX"), "data-y": this.model.get("dataY")});
   },
 
   selectHouse: function(){

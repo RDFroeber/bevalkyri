@@ -2,7 +2,13 @@ window.Bv = { //Defining app name space
   Models: {},
   Collections: {},
   Views: {},
-  Router: {}
+  Router: {},
+
+  init: function(){
+    new Bv.Views.Board();
+    new Bv.Router();
+    Backbone.history.start();
+  }
 }
 
 window.template = function(id){

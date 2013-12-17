@@ -23,6 +23,5 @@
 //= require_tree ./backbone/routers
 
 $(function(){
-  new Bv.Router;
-  new Bv.Views.Board();
+  Bv.init();
 });

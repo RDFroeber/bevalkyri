@@ -4,7 +4,6 @@ Bv.Views.Castle = Backbone.View.extend({
   className: "castle",
 
   initialize: function(){
-    this.$el.attr({"data-x": this.model.get("dataX"), "data-y": this.model.get("dataY")});
   },
 
   setPosition: function(){
