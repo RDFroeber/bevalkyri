@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217165935) do
+ActiveRecord::Schema.define(version: 20131217170032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20131217165935) do
     t.string   "color_one",  null: false
     t.string   "color_two"
     t.text     "manifesto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stats", force: true do |t|
+    t.integer  "player_id",                   null: false
+    t.integer  "money",                       null: false
+    t.integer  "influence",   default: 0
+    t.integer  "quests",      default: 0
+    t.boolean  "blood_crown", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
