@@ -15,11 +15,14 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
+//= require_tree ./backbone/app
 //= require_tree ./backbone/models
 //= require_tree ./backbone/collections
 //= require_tree ./backbone/templates
 //= require_tree ./backbone/views
 //= require_tree ./backbone/routers
-//= require facebook.js.coffee.erb
 
-new BoardView({allTiles: new TilesCollection(), allHouses: new HousesCollection()});
+$(function(){
+  new Bv.Router;
+  new Bv.Views.Board();
+});

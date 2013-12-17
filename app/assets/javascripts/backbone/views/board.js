@@ -1,4 +1,4 @@
-var BoardView = Backbone.View.extend({
+Bv.Views.Board = Backbone.View.extend({
   el: "#world",
 
   initialize: function(options){
@@ -19,8 +19,8 @@ var BoardView = Backbone.View.extend({
       var yTwo = "01";
 
       for(var y = 0; y < 12; y++) {
-        var tile = new Tile({dataX: xOne + "-" + xTwo, dataY: yOne + "-" +  yTwo});
-        var tileView = new TileView({model: tile});
+        var tile = new Bv.Models.Tile({dataX: xOne + "-" + xTwo, dataY: yOne + "-" +  yTwo});
+        var tileView = new Bv.Views.Tile({model: tile});
         
         yOne = this.incrementPoints(yOne);
         yTwo = this.incrementPoints(yTwo);
@@ -36,8 +36,8 @@ var BoardView = Backbone.View.extend({
   },
 
   placeCastle: function(){
-    var castle = new Castle();
-    var castleView = new CastleView({model: castle});
+    var castle = new Bv.Models.Castle();
+    var castleView = new Bv.Views.Castle({model: castle});
 
     castleView.setPosition();
     this.$el.append(castleView.el);
@@ -50,8 +50,8 @@ var BoardView = Backbone.View.extend({
       var yOne = "00";
 
       for(var y = 0; y < 11; y++) {
-        var house = new House({dataX: xOne, dataY: yOne});
-        var houseView = new HouseView({model: house});
+        var house = new Bv.Models.House({dataX: xOne, dataY: yOne});
+        var houseView = new Bv.Views.House({model: house});
 
         yOne = this.incrementPoints(yOne);
 

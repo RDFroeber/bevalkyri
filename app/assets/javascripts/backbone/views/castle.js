@@ -1,4 +1,4 @@
-var CastleView = Backbone.View.extend({
+Bv.Views.Castle = Backbone.View.extend({
   tagName: "div",
 
   className: "castle",

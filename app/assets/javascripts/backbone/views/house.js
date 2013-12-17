@@ -1,4 +1,4 @@
-var HouseView = Backbone.View.extend({
+Bv.Views.House = Backbone.View.extend({
   tagName: "div",
 
   className: "house active",

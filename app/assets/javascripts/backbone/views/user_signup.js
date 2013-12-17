@@ -1,8 +1,8 @@
-var UserView = Backbone.View.extend({
+Bv.Views.UserSignUp = Backbone.View.extend({
   tagName:   "div",
   className: "#user_nav",
 
-  template: _.template( $("script[type='text/html']#sign_in").html() ),
+  // template: _.template( $("script[type='text/html']#sign_in").html() ),
 
   initialize: function() {
     this.listenTo(this.model, "change", this.render);

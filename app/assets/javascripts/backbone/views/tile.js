@@ -1,4 +1,4 @@
-var TileView = Backbone.View.extend({
+Bv.Views.Tile = Backbone.View.extend({
   tagName: "div",
 
   className: "tile",

@@ -1,1 +1,0 @@
-var Castle = Backbone.Model.extend({});
