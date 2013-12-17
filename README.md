@@ -116,3 +116,5 @@ The description of the project...
   * I can upgrade my military bases to increase their range
   * Influence and bases are required to purchase Quests as well (people no longer needed)
   * Quests can now also increase your influence and military
+
+5. I want to log in with my Facebook account so that I do not need to make another account.
