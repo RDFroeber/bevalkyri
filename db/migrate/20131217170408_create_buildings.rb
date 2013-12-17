@@ -9,7 +9,7 @@ class CreateBuildings < ActiveRecord::Migration
       t.string :y_cord, null: false
       # House and Base
       t.integer :level
-      # House
+      # House and Castle
       t.integer :population
       # Base
       t.string :range
