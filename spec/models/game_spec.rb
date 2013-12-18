@@ -19,4 +19,11 @@ describe Game do
     it { should belong_to(:board) }
   end
 
+  context "a game is started" do
+    describe "::start" do
+      it "" do
+
+      end
+    end
+  end
 end

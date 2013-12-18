@@ -55,6 +55,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'launchy'
   gem 'nyan-cat-formatter'
+  gem 'simplecov', :require => false
 end
 
 # Use unicorn as the app server
