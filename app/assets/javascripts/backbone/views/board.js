@@ -5,12 +5,12 @@ Bv.Views.Board = Backbone.View.extend({
     this.createBoard();
     this.placeCastle();
     this.addHouses();
-    // this.allTiles = options.allTiles;
-    // console.log(this.allTiles);
-    // this.allHouses = options.allHouses;
+    // this.allTiles = new Bv.Collections.Tiles();
+    this.listenTo(this.collection, "change", this.fillIn);
   },
 
   createBoard: function(){
+    var allTiles = new Bv.Collections.Tiles();
     var xOne = "00";
     var xTwo = "01";
 
@@ -26,10 +26,11 @@ Bv.Views.Board = Backbone.View.extend({
         yTwo = this.incrementPoints(yTwo);
 
         tileView.setPosition();
-        // this.allTiles.add(tile)
+        allTiles.add(tile);
         this.$el.append(tileView.el);
       };
 
+    // console.log(allTiles.models);
     xOne = this.incrementPoints(xOne);
     xTwo = this.incrementPoints(xTwo);
     }
@@ -56,6 +57,7 @@ Bv.Views.Board = Backbone.View.extend({
         yOne = this.incrementPoints(yOne);
 
         houseView.setPosition();
+        this.collection.add(house);
         this.$el.append(houseView.el);
       };
 
@@ -74,6 +76,10 @@ Bv.Views.Board = Backbone.View.extend({
       num = integer.toString();
     }
     return num
+  },
+
+  fillIn: function(){
+    console.log(this.allTiles);
   }
 
 });

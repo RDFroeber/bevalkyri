@@ -1,3 +1,3 @@
-// Bv.Collections.Tiles = Backbone.Collection.extend({
-//   model: Tile
-// }); 
+Bv.Collections.Tiles = Backbone.Collection.extend({
+  model: Bv.Models.Tile
+}); 

@@ -1,1 +1,4 @@
-Bv.Models.Castle = Backbone.Model.extend({});
+Bv.Models.Castle = Backbone.Model.extend({
+  // url: "/buildings"
+  
+});

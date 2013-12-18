@@ -5,7 +5,7 @@ window.Bv = { //Defining app name space
   Router: {},
 
   init: function(){
-    new Bv.Views.Board();
+    new Bv.Views.Board({collection: new Bv.Collections.Houses()});
     new Bv.Router();
     Backbone.history.start();
   }

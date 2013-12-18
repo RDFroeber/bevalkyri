@@ -1,3 +1,3 @@
-// Bv.Collections.Houses = Backbone.Collection.extend({
-//   model: House
-// });
+Bv.Collections.Houses = Backbone.Collection.extend({
+  model: Bv.Models.House
+});
