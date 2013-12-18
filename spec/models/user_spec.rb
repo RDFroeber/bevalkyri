@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  let(:user) {User.new(name: "Raleigh D", email: "raleigh@d.me", password: "valkyries", password_confirmation: "valkyries")}
+  let(:user) {FactoryGirl.build(:user)}
 
   describe "::new" do
     it "can create a new user" do 
@@ -12,7 +12,10 @@ describe User do
   describe "validations" do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }
-    it { should validate_uniqueness_of(:email).case_insensitive }
+    it "validates uniqueness of email upon user creation" do
+      FactoryGirl.create(:user)
+      should validate_uniqueness_of(:email).case_insensitive
+    end
 
     context "password" do
       it { should have_secure_password }
