@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Player do
-  let(:user) {FactoryGirl.create(:user)}
   let(:player) {FactoryGirl.build(:player)}
 
   describe "::new" do
@@ -23,6 +22,7 @@ describe Player do
     it { should have_many(:boards).through(:games) }
     it { should have_many(:tiles) }
     it { should have_many(:buildings) }
+    it { should have_many(:stats) }
   end
 
 end
