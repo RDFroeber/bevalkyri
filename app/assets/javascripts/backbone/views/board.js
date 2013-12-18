@@ -25,7 +25,6 @@ Bv.Views.Board = Backbone.View.extend({
         yTwo = this.incrementPoints(yTwo);
 
         tileView.setPosition();
-        tile.save();
         allTiles.add(tile);
         this.$el.append(tileView.el);
       };

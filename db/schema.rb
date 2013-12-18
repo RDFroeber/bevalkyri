@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20131217225656) do
     t.datetime "updated_at"
   end
 
-  create_table "boards_players", id: false, force: true do |t|
-    t.integer "player_id", null: false
-    t.integer "board_id",  null: false
-  end
-
-  add_index "boards_players", ["board_id", "player_id"], name: "index_boards_players_on_board_id_and_player_id", using: :btree
-  add_index "boards_players", ["player_id", "board_id"], name: "index_boards_players_on_player_id_and_board_id", using: :btree
-
   create_table "buildings", force: true do |t|
     t.integer  "player_id",  null: false
     t.integer  "board_id",   null: false
