@@ -1,0 +1,3 @@
+class House < Building
+
+end
