@@ -5,7 +5,6 @@ Bv.Views.Board = Backbone.View.extend({
     this.createBoard();
     this.placeCastle();
     this.addHouses();
-    // this.allTiles = new Bv.Collections.Tiles();
     this.listenTo(this.collection, "change", this.fillIn);
   },
 
@@ -26,6 +25,7 @@ Bv.Views.Board = Backbone.View.extend({
         yTwo = this.incrementPoints(yTwo);
 
         tileView.setPosition();
+        tile.save();
         allTiles.add(tile);
         this.$el.append(tileView.el);
       };
@@ -79,7 +79,7 @@ Bv.Views.Board = Backbone.View.extend({
   },
 
   fillIn: function(){
-    console.log(this.allTiles);
+    console.log(this.collection);
   }
 
 });

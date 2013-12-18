@@ -7,5 +7,6 @@ Bevalkyri::Application.routes.draw do
   # match 'signout', to: 'sessions#destroy', as: 'signout', :via => :get
 
   resources :users, except: [:index]
-  resources :players, only: [:new, :create, :show, :destroy]
+  resources :players, only: [:create]
+  resources :tiles, only: [:create]
 end
