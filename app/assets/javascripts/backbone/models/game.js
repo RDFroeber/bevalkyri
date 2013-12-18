@@ -1,4 +1,8 @@
 Bv.Models.Game = Backbone.Model.extend({
-  // url: "/board"
+  urlRoot: "/games",
 
+  defaults: {
+    player_id: 1,
+    board_id: 1,
+  }
 });
