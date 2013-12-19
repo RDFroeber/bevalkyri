@@ -1,11 +1,11 @@
 module GameHelper
 
-  def build_board(board)
-    create_tiles(board)
-    place_castle(board)
+  def build_board(board_id)
+    create_tiles(board_id)
+    place_castle(board_id)
   end
   
-  def create_tiles(board)
+  def create_tiles(board_id)
     x_one = "00"
     x_two = "01"
 
@@ -14,7 +14,7 @@ module GameHelper
       y_two = "01"
 
       12.times do
-        Tile.create(player_id: params[:player_id], board_id: board.id, x_cords: x_one + "-" + x_two, y_cords: y_one + "-" +  y_two)
+        Tile.create(player_id: params[:player_id], board_id: board_id, x_cords: x_one + "-" + x_two, y_cords: y_one + "-" +  y_two)
         
         y_one = increment(y_one)
         y_two = increment(y_two)
@@ -49,23 +49,23 @@ module GameHelper
     end
   end
 
-  def place_castle(board)
+  def place_castle(board_id)
     cords = ["02", "03", "04", "05", "06", "07", "08", "09", "10"]
     x = cords.sample
     y = cords.sample
 
-    Castle.create(player_id: params[:player_id], board_id: board.id, type: "Castle", x_cord: x, y_cord: y)
+    Castle.create(player_id: params[:player_id], board_id: board_id, type: "Castle", x_cord: x, y_cord: y)
 
-    tile_fill(x,y,board)
+    tile_fill(x,y,board_id)
   end
 
-  def tile_fill(x,y,board)
+  def tile_fill(x,y,board_id)
     top_right = "#{x}-#{increment(x)},#{decrement(y)}-#{y}"
     bottom_right = "#{x}-#{increment(x)},#{y}-#{increment(y)}"
     top_left = "#{decrement(x)}-#{x},#{decrement(y)}-#{y}"
     bottom_left = "#{decrement(x)}-#{x},#{y}-#{increment(y)}"
 
-    tiles = [Tile.where(board_id: board.id, x_cords: top_right.split(",")[0], y_cords: top_right.split(",")[1]), Tile.where(board_id: board.id, x_cords: bottom_right.split(",")[0], y_cords: bottom_right.split(",")[1]), Tile.where(board_id: board.id, x_cords: top_left.split(",")[0], y_cords: top_left.split(",")[1]), Tile.where(board_id: board.id, x_cords: bottom_left.split(",")[0], y_cords: bottom_left.split(",")[1])]
+    tiles = [Tile.where(board_id: board_id, x_cords: top_right.split(",")[0], y_cords: top_right.split(",")[1]), Tile.where(board_id: board_id, x_cords: bottom_right.split(",")[0], y_cords: bottom_right.split(",")[1]), Tile.where(board_id: board_id, x_cords: top_left.split(",")[0], y_cords: top_left.split(",")[1]), Tile.where(board_id: board_id, x_cords: bottom_left.split(",")[0], y_cords: bottom_left.split(",")[1])]
     # binding.pry
     tiles.each do |tile|
       tile[0].territory = true

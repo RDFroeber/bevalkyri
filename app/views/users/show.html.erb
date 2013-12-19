@@ -16,7 +16,7 @@
   <div class="game">
     <% p.games.each do |g| %>
       <p>Last Played:
-      <%= g.updated_at.strftime("%b. %d %Y") %></p>
+      <%= g.updated_at.strftime("%h%n%d,%n%Y%nat%n%r") %></p>
       <%= link_to "Resume Game", user_player_game_path(@user, p.id, g.id) + "." + g.board.id.to_s %>
     <% end %>
   </div>
