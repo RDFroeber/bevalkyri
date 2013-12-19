@@ -2,7 +2,7 @@
 
 <div id="world">
   <% @tiles.each do |t| %>
-    <div class="tile" data-x="<%= t.x_cords %>" data-y="<%= t.y_cords %>"></div> 
+    <div class="<%= t.territory == true ? 'tile territory' : 'tile' %>" data-x="<%= t.x_cords %>" data-y="<%= t.y_cords %>"></div>
   <% end %>
 
   <% @castles.each do |b| %>
