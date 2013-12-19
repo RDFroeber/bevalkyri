@@ -49,22 +49,22 @@ h1, h2 {
    background-color: blue;
 }
 .castle.gold {
-   background-color: blue;
+   background-color: gold;
 } 
 .castle.green {
-   background-color: blue;
+   background-color: green;
 }
 .castle.maroon {
-   background-color: blue;
+   background-color: maroon;
 }
 .castle.orange {
-   background-color: blue;
+   background-color: orange;
 } 
 .castle.red {
-   background-color: blue;
+   background-color: red;
 }
 .castle.silver {
-   background-color: blue;
+   background-color: silver;
 }
 .territory.black {
   background-color: rgba(0,0,0,0.40);
