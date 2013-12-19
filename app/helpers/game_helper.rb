@@ -56,7 +56,7 @@ module GameHelper
 
     Castle.create(player_id: params[:player_id], board_id: board_id, type: "Castle", x_cord: x, y_cord: y)
 
-    tile_fill(x,y,board_id)
+    # tile_fill(x,y,board_id)
   end
 
   def tile_fill(x,y,board_id)
