@@ -10,6 +10,18 @@
   </div>
 <% end %>
 
+<h3>Saved Games</h3>
+<% @user.players.each do |p| %>
+  <h4><%= p.name %></h4>
+  <div class="game">
+    <% p.games.each do |g| %>
+      <p>Last Played:
+      <%= g.updated_at.strftime("%b. %d %Y") %></p>
+      <%= link_to "Resume Game", user_player_game_path(@user, p.id, g.id) + "." + g.board.id.to_s %>
+    <% end %>
+  </div>
+<% end %>
+
 <%= link_to "Edit Account", edit_user_path(@user) %>
 <%= link_to "Logout", session_path, :method => :delete %>
 <%= link_to "Create a Player", new_user_player_path(@user) %>
