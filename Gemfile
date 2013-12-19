@@ -41,6 +41,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'backaid'
 
+gem 'rails_12factor'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'jasmine-core', github: 'pivotal/jasmine'
@@ -66,3 +68,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Ruby Version
+ruby '2.0.0'
