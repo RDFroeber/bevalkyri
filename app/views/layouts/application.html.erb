@@ -6,6 +6,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <h1 class="logo">RandR</h1>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", new_user_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "My Account", user_path(current_user) %></li>
+          <li><%= link_to "Create a Player", new_user_player_path(@user) %></li>
+          <li><%= link_to "Start a Game", start_user_player_games_path(@user, @user.players.first.id) %></li>
+          <li><%= link_to "Logout", session_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "Login", new_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
 
 <%= yield %>
 
