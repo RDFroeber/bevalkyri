@@ -2,10 +2,10 @@
 
 <div id="world">
   <% @tiles.each do |t| %>
-    <div class="<%= t.territory == true ? 'tile territory' : 'tile' %>" data-x="<%= t.x_cords %>" data-y="<%= t.y_cords %>"></div>
+    <div class="tile <%= t.player.color_one.downcase %> <%= 'territory' if t.territory == true %>" data-x="<%= t.x_cords %>" data-y="<%= t.y_cords %>"></div>
   <% end %>
 
   <% @castles.each do |b| %>
-    <div class="castle" data-x="<%= b.x_cord %>" data-y="<%= b.y_cord %>"></div> 
+    <div class="castle <%= b.player.color_one.downcase %>" data-x="<%= b.x_cord %>" data-y="<%= b.y_cord %>"></div> 
   <% end %>
 </div>

@@ -149,6 +149,12 @@
         null,
         null
       ],
+      "/Users/RaleighD/dev/bevalkyri/app/models/stat.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/RaleighD/dev/bevalkyri/app/models/building.rb": [
         1,
         1,
@@ -160,14 +166,8 @@
         1,
         null,
         null
-      ],
-      "/Users/RaleighD/dev/bevalkyri/app/models/stat.rb": [
-        1,
-        1,
-        null,
-        null
       ]
     },
-    "timestamp": 1387408021
+    "timestamp": 1387441904
   }
 }
