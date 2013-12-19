@@ -1,0 +1,15 @@
+<h2><%= @user.name %> | <%= @user.email %></h2>
+
+<h3>Your Players</h3>
+<% @user.players.each do |p| %>
+  <div class="player">
+    <%= p.name %> of <%= p.kingdom %><br />
+    <%= p.crest %><br />
+    <%= p.color_one %> and <%= p.color_two %><br />
+    <%= link_to "Start a Game", start_user_player_games_path(@user, p.id) %>
+  </div>
+<% end %>
+
+<%= link_to "Edit Account", edit_user_path(@user) %>
+<%= link_to "Logout", session_path, :method => :delete %>
+<%= link_to "Create a Player", new_user_player_path(@user) %>

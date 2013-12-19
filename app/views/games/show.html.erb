@@ -1,0 +1,11 @@
+<h2>Your Game!!!</h2>
+
+<div id="world">
+  <% @tiles.each do |t| %>
+    <div class="tile" data-x="<%= t.x_cords %>" data-y="<%= t.y_cords %>"></div> 
+  <% end %>
+
+  <% @castles.each do |b| %>
+    <div class="castle" data-x="<%= b.x_cord %>" data-y="<%= b.y_cord %>"></div> 
+  <% end %>
+</div>

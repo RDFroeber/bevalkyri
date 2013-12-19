@@ -7,12 +7,36 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
-      redirect_to user_path(params[:id])
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       render :new
     end
   end 
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      redirect_to new_user_path
+    else
+      render :edit
+    end
+  end
 
   private
 
@@ -22,7 +46,11 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
+    else
+      redirect_to new_user_path
+    end
   end
 
   def authorized!

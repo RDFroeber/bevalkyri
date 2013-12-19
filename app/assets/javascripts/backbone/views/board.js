@@ -1,5 +1,6 @@
 Bv.Views.Board = Backbone.View.extend({
-  el: "#world",
+  // el: "#world",
+  tagName: "div",
 
   initialize: function(options){
     this.createBoard();

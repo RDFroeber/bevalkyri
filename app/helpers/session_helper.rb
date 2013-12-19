@@ -14,7 +14,4 @@ module SessionHelper
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-  def current_player
-    @current_player ||= Player.find_by(user_id: session[:user_id])
-  end  
 end

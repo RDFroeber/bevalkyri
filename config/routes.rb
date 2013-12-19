@@ -10,7 +10,11 @@ Bevalkyri::Application.routes.draw do
 
   resources :users, except: [:index] do
     resources :players, only: [:index, :new, :create] do 
-      resources :games, except: [:index]
+      resources :games, only: [:show, :update] do
+        collection do
+          get 'start'
+        end
+      end
     end
   end
 

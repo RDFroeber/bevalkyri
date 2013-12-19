@@ -34,7 +34,7 @@
         1,
         1,
         1,
-        null,
+        1,
         null,
         null,
         null,
@@ -149,13 +149,13 @@
         null,
         null
       ],
-      "/Users/RaleighD/dev/bevalkyri/app/models/tile.rb": [
+      "/Users/RaleighD/dev/bevalkyri/app/models/building.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/RaleighD/dev/bevalkyri/app/models/building.rb": [
+      "/Users/RaleighD/dev/bevalkyri/app/models/tile.rb": [
         1,
         1,
         null,
@@ -168,6 +168,6 @@
         null
       ]
     },
-    "timestamp": 1387394413
+    "timestamp": 1387408021
   }
 }

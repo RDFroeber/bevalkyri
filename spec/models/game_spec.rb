@@ -22,7 +22,7 @@ describe Game do
   context "a game is started" do
     describe "::start" do
       it "" do
-
+        expect()
       end
     end
   end
