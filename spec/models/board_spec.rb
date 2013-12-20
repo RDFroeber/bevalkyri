@@ -15,4 +15,10 @@ describe Board do
     it { should have_many(:tiles) }
     it { should have_many(:buildings) }
   end
+
+  describe "database columns" do
+    it { should have_db_column(:terrain_type)}
+    it { should have_db_column(:winner) }
+  end
+
 end

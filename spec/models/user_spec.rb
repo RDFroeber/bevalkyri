@@ -30,4 +30,14 @@ describe User do
     it { should have_many(:games).through(:players) }
   end
 
+  describe "database columns" do
+    it { should have_db_column(:name).with_options(null: false) }
+    it { should have_db_column(:email).with_options(null: false) }
+    it { should have_db_column(:password_digest) }
+    it { should have_db_column(:provider) }
+    it { should have_db_column(:uid) }
+    it { should have_db_column(:oauth_token) }
+    it { should have_db_column(:oauth_expires_at) }
+  end
+
 end

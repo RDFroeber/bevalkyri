@@ -9,6 +9,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @this_game = Game.find(params[:id])
     @tiles = Tile.where(board_id: params[:format])
     @castles = Castle.where(board_id: params[:format])
     @castles.each do |c|
