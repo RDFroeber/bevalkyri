@@ -9,6 +9,20 @@ describe Building do
     end
   end
 
+  describe "building types" do
+    let(:castle) {FactoryGirl.build(:castle)}
+    let(:house) {FactoryGirl.build(:house)}
+
+    it "is a Castle" do 
+      expect(castle).to be_an_instance_of(Castle)
+    end
+
+    it "is a House" do 
+      expect(house).to be_an_instance_of(House)
+    end
+
+  end
+
   describe "validations" do
     it { should validate_presence_of(:player_id) }
     it { should validate_presence_of(:board_id) }
