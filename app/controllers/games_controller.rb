@@ -20,4 +20,16 @@ class GamesController < ApplicationController
   def update
   end
 
+  def destroy
+    if game.destroy
+      redirect_to user_path(params[:user_id])
+    end
+  end
+
+  private
+
+  def game
+    @game = Game.find(params[:id])
+  end
+
 end

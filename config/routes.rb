@@ -9,8 +9,8 @@ Bevalkyri::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy] 
 
   resources :users, except: [:index] do
-    resources :players, only: [:index, :new, :create] do 
-      resources :games, only: [:show, :update] do
+    resources :players, only: [:index, :new, :create, :destroy] do 
+      resources :games, only: [:show, :update, :destroy] do
         collection do
           get 'start'
         end

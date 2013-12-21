@@ -3,6 +3,7 @@ module GameHelper
   def build_board(board_id)
     create_tiles(board_id)
     place_castle(board_id)
+    assign_money
   end
   
   def create_tiles(board_id)
@@ -73,4 +74,9 @@ module GameHelper
     end
   end
 
+  def assign_money
+    current_player = Player.find(params[:player_id])
+    # binding.pry
+    current_player.stat.money  = 100
+  end
 end

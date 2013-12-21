@@ -7,6 +7,7 @@
     <%= p.crest %><br />
     <%= p.color_one %> and <%= p.color_two %><br />
     <%= link_to "Start a Game", start_user_player_games_path(@user, p.id) %>
+    <%= link_to "Delete Player", user_player_path(@user, p.id), :method => :delete %>
   </div>
 <% end %>
 
@@ -18,6 +19,7 @@
       <p>Last Played:
       <%= g.updated_at.strftime("%h%n%d,%n%Y%nat%n%r") %></p>
       <%= link_to "Resume Game", user_player_game_path(@user, p.id, g.id) + "." + g.board.id.to_s %>
+      <%= link_to "Delete Game", user_player_game_path(@user, p.id, g.id), :method => :delete %>
     <% end %>
   </div>
 <% end %>
