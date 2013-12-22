@@ -169,6 +169,11 @@
         1,
         2,
         2,
+        null,
+        null,
+        1,
+        2,
+        2,
         2,
         2,
         null,
@@ -176,6 +181,7 @@
         null
       ],
       "/Users/RaleighD/dev/bevalkyri/app/models/stat.rb": [
+        1,
         1,
         1,
         null,
@@ -258,6 +264,6 @@
         null
       ]
     },
-    "timestamp": 1387583804
+    "timestamp": 1387731695
   }
 }

@@ -18,7 +18,7 @@ describe Board do
 
   describe "database columns" do
     it { should have_db_column(:terrain_type)}
-    it { should have_db_column(:winner) }
+    it { should have_db_column(:winner).with_options(default: false) }
   end
 
 end

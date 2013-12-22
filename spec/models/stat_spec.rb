@@ -10,13 +10,18 @@ describe Stat do
     end
   end
 
-  describe "validation and association" do
+  describe "validations" do
     it { should validate_presence_of(:player_id) }
+    it { should validate_presence_of(:board_id) }
+  end
+
+  describe "associations" do
     it { should belong_to(:player) }
+    it { should belong_to(:board) }
   end
 
   describe "database columns" do
-    it { should have_db_column(:money).with_options(null: false) }
+    it { should have_db_column(:money).with_options(default: 0) }
     it { should have_db_column(:influence).with_options(default: 0) }
     it { should have_db_column(:quests).with_options(default: 0) }
     it { should have_db_column(:blood_crown).with_options(default: false) }
