@@ -1,11 +1,10 @@
 class GamesController < ApplicationController  
   def start
     @board = Board.create
-    build_board
-    # binding.pry
+    # build_board
     @game = Game.create(player_id: params[:player_id], board_id: @board.id)
 
-    redirect_to user_player_game_path(params[:user_id], params[:player_id], @game.id, @board)
+    redirect_to user_player_game_boards_path(params[:user_id], params[:player_id], @game.id, board_id: @board)
   end
 
   def show

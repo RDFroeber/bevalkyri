@@ -1,7 +1,8 @@
 class BoardsController < ApplicationController  
   def create
+    binding.pry
     @board = Board.new(user_params)
-    @board.save
+    # @board.save
   end 
 
   def update
