@@ -17,8 +17,8 @@
   <div class="game">
     <% p.games.each do |g| %>
       <p>Last Played:
-      <%= g.updated_at.strftime("%h%n%d,%n%Y%nat%n%r") %></p>
-      <%= link_to "Resume Game", user_player_game_path(@user, p.id, g.id) + "." + g.board.id.to_s %>
+      <%= g.updated_at.in_time_zone("Eastern Time (US & Canada)").strftime("%h %d, %Y at %r") %></p>
+      <%= link_to "Resume Game", user_player_game_board_path(@user, p.id, g.id, g.board_id) %>
       <%= link_to "Delete Game", user_player_game_path(@user, p.id, g.id), :method => :delete %>
     <% end %>
   </div>

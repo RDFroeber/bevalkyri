@@ -11,18 +11,33 @@
 </div>
 
 <div id="game-stats">
-  <p>Money: $100<%= @this_game.player.stat.money %></p>
+  <% @this_game.player.stats.each do |s| %>
+    <% if s.board_id == @this_game.board_id %>
+    <% @money = s.money %>
+    <% end %>
+  <% end %>
+  <p>Money: $<%= @money%></p>
+
+  <% @count = 0 %>
   <% @this_game.player.buildings.each do |b| %>
-    <% if b.board_id == this_game.board_id %>
+    <% if b.board_id == @this_game.board_id %>
     <% @count += 1 %>
     <% end %>
   <% end %>
-  <p>Houses: 1<%= @count %></p>
+  <p>Houses: <%= @count %></p>
+
+  <% @total = 0 %>
   <% @this_game.player.buildings.each do |b| %>
     <% if b.type == "Castle" || "House" %>
-    <% @total += b.population %>
+    <% @total += b.population if !b.population.nil? %>
     <% end %>
   <% end %>
-  <p>Population: 50<%= @total %></p>
-  <p>Quests: 0<%= @this_game.player.stat.quests %></p>
+  <p>Population: <%= @total %></p>
+
+  <% @this_game.player.stats.each do |s| %>
+    <% if s.board_id == @this_game.board_id %>
+    <% @quests = s.quests %>
+    <% end %>
+  <% end %>
+  <p>Quests: <%= @quests %></p>
 </div>
