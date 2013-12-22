@@ -9,14 +9,12 @@ h1, h2 {
   border: 1px solid black;
   position: absolute;
 }
-
 .castle {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   position: absolute;
 }
-
 .house {
   background-color: #f06;
   width: 10px;
@@ -24,7 +22,6 @@ h1, h2 {
   border-radius: 50%;
   position: absolute;
 }
-
 .active {
   opacity: 0.0;
   transition: 500;
@@ -35,12 +32,16 @@ h1, h2 {
   transition: 500;
   -webkit-transition: 500;
 }
-
 #world {
   margin: 0 auto;
   width: 384px; /* Number of tiles in width * 32 */
   /*border: 1px solid red;*/
   position: relative;
+}
+#crest {
+  position: relative;
+  left: -155px;
+  z-index: -1;
 }
 .castle.black {
   background-color: black;

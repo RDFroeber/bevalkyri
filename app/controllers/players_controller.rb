@@ -21,10 +21,6 @@ class PlayersController < ApplicationController
     player_associations << Stat.where(player_id: params[:id])
 
     player.games.each do |game|
-      player_associations << Board.find(game.board_id)
-    end
-
-    player.games.each do |game|
       player_associations << Game.where(player_id: params[:id], board_id: game.board_id)
     end
 
