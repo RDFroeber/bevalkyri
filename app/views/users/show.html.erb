@@ -5,15 +5,23 @@
   <div class="player">
     <%= p.name %> of <%= p.kingdom %><br />
     <%= p.crest %><br />
-    <%= p.color_one %> and <%= p.color_two %><br />
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="150px" height="150px" enable-background="new 0 0 150 150" xml:space="preserve">
+    <path fill="<%= p.color_one %>" stroke="<%= p.color_two.nil? ? '#000' : p.color_two %>" stroke-width="5" d="M130.915,38.693l-12.368-23.572c0,0-11.589,4.639-22.018,3.091
+    c-10.438-1.543-19.882-8.893-19.882-8.893s-9.472,7.35-19.91,8.893c-10.432,1.547-22.016-3.091-22.016-3.091L22.359,38.693
+    c0,0,9.642,10.036,8.105,20.093C28.92,68.822,19.27,86.213,23.896,100.5c4.585,14.142,15.623,23.749,52.158,39.672v0.509l0.576-0.26
+    l0.583,0.26v-0.509c36.537-15.923,47.563-25.53,52.16-39.672c4.631-14.287-5.032-31.678-6.564-41.714
+    C121.263,48.729,130.915,38.693,130.915,38.693z"/>
+    </svg>
     <%= link_to "Start a Game", start_user_player_games_path(@user, p.id) %>
     <%= link_to "Delete Player", user_player_path(@user, p.id), :method => :delete %>
   </div>
 <% end %>
 
+
 <h3>Saved Games</h3>
 <% @user.players.each do |p| %>
-  <h4><%= p.name if !p.games.first.nil? %></h4>
+  <h4>Played as <%= p.name if !p.games.first.nil? %>:</h4>
   <div class="game">
     <% p.games.each do |g| %>
       <p>Last Played:

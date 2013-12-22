@@ -43,7 +43,7 @@ The description of the project...
   * I start with a set amount of money that I can use to buy houses
   * The more territory and houses I own, the more money I earn
   * I can buy Quests with my money and people
-  * Quest can return with more money or less(debt), more or less people, and sometimes the *Blood Crown*
+  * Quests can return with more money or less(debt), more or less people, and sometimes the *Blood Crown*
   * I win the game when I find the *Blood Crown*
 
 4. I want to save an existing player profile so that I can play as that player whenever I want.
@@ -70,7 +70,7 @@ The description of the project...
 3. I want to play against other users so that the game is more interesting.
 
 4. I want to play a game continued...
-  * An influence catagory is added
+  * An influence category is added
   * Players attributes continued (Bases, Influence)
   * I can add a military base to increase my influence
   * I can upgrade my houses to increase the amount of money I earn
