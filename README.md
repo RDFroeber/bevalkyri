@@ -21,6 +21,8 @@ The description of the project...
 
 
 ## Data Model
+![Entity Relationship Diagram](bevalkyriERD.jpg)
+
 + Users
   * name
   * email
