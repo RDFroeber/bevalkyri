@@ -1,7 +1,7 @@
 class GamesController < ApplicationController  
   def start
     @board = Board.create
-    build_board(@board.id)
+    build_board
     # binding.pry
     @game = Game.create(player_id: params[:player_id], board_id: @board.id)
 
