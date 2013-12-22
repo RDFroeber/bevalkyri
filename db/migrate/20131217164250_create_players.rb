@@ -1,7 +1,7 @@
 class CreatePlayers < ActiveRecord::Migration
   def change
     create_table :players do |t|
-      t.references :user, null: false
+      t.references :user, null: false, index: true
       t.string :name, null: false
       t.string :kingdom
       t.string :crest, null: false

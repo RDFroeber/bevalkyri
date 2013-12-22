@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217225656) do
+ActiveRecord::Schema.define(version: 20131222163819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boards", force: true do |t|
     t.string   "terrain_type"
-    t.boolean  "winner"
+    t.boolean  "winner",       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,15 +61,21 @@ ActiveRecord::Schema.define(version: 20131217225656) do
     t.datetime "updated_at"
   end
 
+  add_index "players", ["user_id"], name: "index_players_on_user_id", using: :btree
+
   create_table "stats", force: true do |t|
     t.integer  "player_id",                   null: false
-    t.integer  "money",                       null: false
+    t.integer  "board_id",                    null: false
+    t.integer  "money",       default: 0
     t.integer  "influence",   default: 0
     t.integer  "quests",      default: 0
     t.boolean  "blood_crown", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "stats", ["board_id"], name: "index_stats_on_board_id", using: :btree
+  add_index "stats", ["player_id"], name: "index_stats_on_player_id", using: :btree
 
   create_table "tiles", force: true do |t|
     t.integer  "player_id",                  null: false
