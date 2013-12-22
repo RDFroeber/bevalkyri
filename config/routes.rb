@@ -11,6 +11,7 @@ Bevalkyri::Application.routes.draw do
   resources :users, except: [:index] do
     resources :players, only: [:index, :new, :create, :destroy] do 
       resources :games, only: [:show, :update, :destroy] do
+        resources :boards, only: [:create, :update]
         collection do
           get 'start'
         end
@@ -18,7 +19,6 @@ Bevalkyri::Application.routes.draw do
     end
   end
 
-  resources :boards, only: [:create, :update]
   resources :tiles, only: [:create, :update]
   resources :buildings, only: [:create, :update]
 end
