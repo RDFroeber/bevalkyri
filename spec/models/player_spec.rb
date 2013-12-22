@@ -22,7 +22,7 @@ describe Player do
     it { should have_many(:boards).through(:games) }
     it { should have_many(:tiles) }
     it { should have_many(:buildings) }
-    it { should have_one(:stat) }
+    it { should have_many(:stats) }
   end
 
   describe "database columns" do

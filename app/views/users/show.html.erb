@@ -13,7 +13,7 @@
 
 <h3>Saved Games</h3>
 <% @user.players.each do |p| %>
-  <h4><%= p.name %></h4>
+  <h4><%= p.name if !p.games.first.nil? %></h4>
   <div class="game">
     <% p.games.each do |g| %>
       <p>Last Played:

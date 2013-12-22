@@ -4,7 +4,7 @@ class Player < ActiveRecord::Base
   has_many :boards, :through => :games
   has_many :tiles
   has_many :buildings
-  has_one :stat
+  has_many :stats
 
   validates :user_id, :name, :crest, :color_one, presence: true
 end
