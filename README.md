@@ -23,54 +23,6 @@ The description of the project...
 ## Data Model
 ![Entity Relationship Diagram](bevalkyriERD.jpg)
 
-+ Users
-  * name
-  * email
-  * pasword_digest
-  * *can have many Players*
-+ Players
-  * user_id fk *belongs to a User*
-  * name
-  * kingdom
-  * crest
-  * color_one
-  * color_two
-  * manifesto
-  * *can have many Games*
-  * *can have many Buildings*
-  * *can have zero to many Tiles*
-+ Join: Player and Board
-  * player_id fk *belongs to a Player*
-  * board_id fk *belongs to a Board*
-+ Boards
-  * terrain_type
-  * winner?
-  * *can have many Buildings*
-  * *can have many Games*
-  * *can have many Buildings*
-  * *can have many Tiles*
-+ Tiles
-  * player_id fk *belongs to a Player*
-  * board_id fk *belongs to a Board*
-  * x_cords
-  * y_cords
-  * territory?
-+ Buildings (STI)
-  * player_id fk *belongs to a Player*
-  * board_id fk *belongs to a Board*
-  * type (Castle, House, Base)
-  * x_cord
-  * y_cord
-  * level (House and Base)
-  * population (House)
-  * range (Base)
-+ Stats
-  * player_id fk *belongs to a Player*
-  * money
-  * influence
-  * quests
-  * blood_crown?
-
 ## User Stories
 **As a User**
 
