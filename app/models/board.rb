@@ -46,7 +46,7 @@ class Board < ActiveRecord::Base
     x = cords.sample
     y = cords.sample
 
-    Castle.create(player_id: player.id, board_id: self.id, type: "Castle", x_cord: x, y_cord: y)
+    Castle.create(player_id: player.id, board_id: self.id, type: "Castle", x_cord: x, y_cord: y, population: 50)
   end
 
   def assign_money

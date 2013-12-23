@@ -2,7 +2,7 @@ $("div.tile").each(function(){
   var distanceFromTop = (12 - $(this).attr("data-y").split("-")[1]) * 32;
   var distanceFromLeft = ($(this).attr("data-x").split("-")[0]) * 32;
 
-  $(this).css({ "top": distanceFromTop, "left": distanceFromLeft, "background-color": "blue" });
+  $(this).css({ "top": distanceFromTop, "left": distanceFromLeft });
   // $(this).css("background-color", $(this).attr("color_one"));
   // $(this).css("opacity", 0.4);
 

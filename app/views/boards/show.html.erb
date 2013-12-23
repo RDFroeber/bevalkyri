@@ -11,33 +11,26 @@
 </div>
 
 <div id="game-stats">
-  <% @this_game.player.stats.each do |s| %>
-    <% if s.board_id == @this_game.board_id %>
-    <% @money = s.money %>
-    <% end %>
-  <% end %>
-  <p>Money: $<%= @money%></p>
-
-  <% @count = 0 %>
+  <% @houses = 0 %>
+  <% @pop = 0 %>
   <% @this_game.player.buildings.each do |b| %>
-    <% if b.board_id == @this_game.board_id %>
-    <% @count += 1 %>
+    <% if b.board_id == @this_game.board_id && b.type == "House"%>
+    <% @houses += 1 %>
     <% end %>
-  <% end %>
-  <p>Houses: <%= @count %></p>
-
-  <% @total = 0 %>
-  <% @this_game.player.buildings.each do |b| %>
     <% if b.type == "Castle" || "House" %>
-    <% @total += b.population if !b.population.nil? %>
+    <% @pop += b.population if !b.population.nil? %>
     <% end %>
   <% end %>
-  <p>Population: <%= @total %></p>
+  <p>Houses: <%= @houses %></p>
+  <p>Population: <%= @pop %></p>
 
   <% @this_game.player.stats.each do |s| %>
     <% if s.board_id == @this_game.board_id %>
     <% @quests = s.quests %>
+    <% @money = s.money %>
     <% end %>
   <% end %>
   <p>Quests: <%= @quests %></p>
+  <p>Money: $<%= @money%></p>
+
 </div>
