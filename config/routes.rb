@@ -23,6 +23,7 @@ Bevalkyri::Application.routes.draw do
     end
   end
 
-  resources :tiles, only: [:create, :update]
-  resources :buildings, only: [:create, :update]
+  resources :tiles, only: [:index]
+  resources :buildings, only: [:index]
+  resources :stats, only: [:index]
 end

@@ -14,6 +14,7 @@ h1, h2 {
   height: 20px;
   border-radius: 50%;
   position: absolute;
+  background-color: gold;
 }
 .house {
   background-color: #f06;
@@ -21,6 +22,9 @@ h1, h2 {
   height: 10px;
   border-radius: 50%;
   position: absolute;
+}
+.territory {
+  background-color: lighten( gold, 10% )
 }
 .active {
   opacity: 0.0;
@@ -42,52 +46,4 @@ h1, h2 {
   position: relative;
   left: -155px;
   z-index: -1;
-}
-.castle.black {
-  background-color: black;
-}
-.castle.blue {
-   background-color: blue;
-}
-.castle.gold {
-   background-color: gold;
-} 
-.castle.green {
-   background-color: green;
-}
-.castle.maroon {
-   background-color: maroon;
-}
-.castle.orange {
-   background-color: orange;
-} 
-.castle.red {
-   background-color: red;
-}
-.castle.silver {
-   background-color: silver;
-}
-.territory.black {
-  background-color: rgba(0,0,0,0.40);
-}
-.territory.blue {
-  background-color: rgba(0,0,255,0.20);
-}
-.territory.gold {
-  background-color: rgba(255,215,0,0.20);
-}
-.territory.green {
-  background-color: rgba(0,255,0,0.20);
-}
-.territory.maroon {
-  background-color: rgba(128,0,0,0.20);
-}
-.territory.orange {
-  background-color: rgba(255,165,0,0.20);
-}
-.territory.red {
-  background-color: rgba(255,0,0,0.20);
-}
-.territory.silver {
-  background-color: rgba(192,192,192,0.40);
 }

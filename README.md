@@ -26,9 +26,21 @@ The description of the project...
 ## User Stories
 **As a User**
 
-1. I want to create a new player so that I can play a game as that player.
+1. I want to create an account so that my personal information is saved and secure.
 
-2. I want to create a new game so that I can start playing from the beginning.
+2. I want to login to my account so that I can access my personal information.
+
+3. I want to edit my account information so that the digital representation of myself is not forever frozen in time.
+
+4. I want to save an existing player profile so that I can play as that player whenever I want.
+
+5. I want to select an existing player profile to play a game so that I can immediately start playing.
+
+6. I want to delete an existing player profile so that I erase persisted personas of myself from the world of Bevalkyri.
+
+7. I want to create a new player so that I can play a game as that player.
+
+8. I want to create a new game so that I can start playing from the beginning.
   * There are Tiles (spaces)
   * There is a Castle (place to start/starter territory)
   * The Tiles surrounding my Castle are filled in (part of my territory)
@@ -38,28 +50,15 @@ The description of the project...
   * My money increments over time
   * Money decreases when I buy a house
 
-3. I want to play a game so that I procrastinate whatever else I am supposed to be doing.
+9. I want to see my current game statistics so that I know how I am doing.
+
+10. I want to play a game so that I procrastinate whatever else I am supposed to be doing.
   * My Castle is placed somewhere on the Board
   * I start with a set amount of money that I can use to buy houses
   * The more territory and houses I own, the more money I earn
   * I can buy Quests with my money and people
   * Quests can return with more money or less(debt), more or less people, and sometimes the *Blood Crown*
   * I win the game when I find the *Blood Crown*
-
-4. I want to save an existing player profile so that I can play as that player whenever I want.
-
-5. I want to select an existing player profile to play a game so that I can immediately start playing.
-
-6. I want to delete an existing player profile so that I erase persisted personas of myself from the world of Bevalkyri.
-
-7. I want to see my current game statistics so that I know how I am doing.
-
-8. I want to create an account so that my personal information is saved and secure.
-
-9. I want to login to my account so that I can access my personal information.
-
-10. I want to edit my account information so that the digital representation of myself is not forever frozen in time.
-
 
 ### Phase 2
 
