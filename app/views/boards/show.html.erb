@@ -14,10 +14,10 @@
   <% @houses = 0 %>
   <% @pop = 0 %>
   <% @this_game.player.buildings.each do |b| %>
-    <% if b.board_id == @this_game.board_id && b.type == "House"%>
+    <% if b.board_id == @this_game.board_id && b.type == "House" %>
     <% @houses += 1 %>
     <% end %>
-    <% if b.type == "Castle" || "House" %>
+    <% if b.board_id == @this_game.board_id && b.type == "Castle" || "House" %>
     <% @pop += b.population if !b.population.nil? %>
     <% end %>
   <% end %>

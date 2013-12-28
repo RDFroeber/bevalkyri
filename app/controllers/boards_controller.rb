@@ -1,10 +1,11 @@
 class BoardsController < ApplicationController  
   def build
     # binding.pry
-    @board = Board.find(params[:board_id])
+    board_id = params[:format]
+    @board = Board.find(board_id)
     @board.build_board(params[:player_id])
 
-    redirect_to user_player_game_board_path(params[:user_id], params[:player_id], params[:game_id], params[:board_id])
+    redirect_to user_player_game_board_path(params[:user_id], params[:player_id], params[:game_id], board_id)
   end 
 
   def show
