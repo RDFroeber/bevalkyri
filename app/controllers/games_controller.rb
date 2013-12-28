@@ -3,7 +3,7 @@ class GamesController < ApplicationController
     @board = Board.create
     @game = Game.create(player_id: params[:player_id], board_id: @board.id)
 
-    redirect_to build_user_player_game_boards_path(params[:user_id], params[:player_id], @game.id, board_id: @board)
+    redirect_to build_user_player_game_boards_path(params[:user_id], params[:player_id], @game.id, {board_id: @board})
   end
 
   def destroy

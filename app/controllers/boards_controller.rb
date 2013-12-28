@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController  
   def build
+    # binding.pry
     @board = Board.find(params[:board_id])
     @board.build_board(params[:player_id])
 
